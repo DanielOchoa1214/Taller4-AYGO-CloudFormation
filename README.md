@@ -1,18 +1,23 @@
-# Welcome to your CDK Java project!
+# Workshop 4 AREP - Daniel Sebastian Ochoa Urrego
 
-This is a blank project for CDK development with Java.
+This project is a simple demonstration on how to use the AWS CDK with Java to create a Lambda function in code.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Getting started
 
-It is a [Maven](https://maven.apache.org/) based project, so you can open this project with any Maven compatible Java IDE to build and run tests.
+This instructions will help you have a functional copy of the project on your machine
 
-## Useful commands
+### Prerequisites
 
- * `mvn package`     compile and run tests
- * `cdk ls`          list all stacks in the app
- * `cdk synth`       emits the synthesized CloudFormation template
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk docs`        open CDK documentation
+* Git 
+* Java
+* Maven
+* AWS CLI
+* AWS CDK
 
-Enjoy!
+### Installing the project
+
+To have a local copy of the project run the following command
+
+```
+git clone https://github.com/DanielOchoa1214/Taller2-AYGO.git
+```
