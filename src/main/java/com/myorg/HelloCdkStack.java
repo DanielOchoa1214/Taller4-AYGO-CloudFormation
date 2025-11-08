@@ -27,7 +27,7 @@ public class HelloCdkStack extends Stack {
                         exports.handler = async function(event) {
                             return {
                                 statusCode: 200,
-                                body: JSON.stringify('Hello World!')
+                                body: JSON.stringify('Hello from a Lambda in the cloud :D')
                             };
                         };
                         """))
