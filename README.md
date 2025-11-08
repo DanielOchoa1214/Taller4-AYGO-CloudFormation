@@ -1,4 +1,4 @@
-# Workshop 4 AREP - Daniel Sebastian Ochoa Urrego
+# Workshop 4 AYGO - Daniel Sebastian Ochoa Urrego
 
 This project is a simple demonstration on how to use the AWS CDK with Java to create a Lambda function in code.
 
