@@ -51,6 +51,26 @@ And when you go to the URL the the last command shows, you should see something 
 ## Design
 
 ### Architecture
+
+This project uses the AWS Cloud Development Kit (CDK) with a small Java application to define and deploy a single CloudFormation stack that provisions a minimal serverless HTTP endpoint.
+
+Key components:
+
+- CDK App (Java): the entry point is `HelloCdkApp` which constructs and synthesizes the `HelloCdkStack` with the target AWS account and region.
+- CloudFormation Stack (`HelloCdkStack`): contains the resources defined by the CDK code:
+  - AWS Lambda Function: a Node.js 20.x function created with inline source code that returns a simple JSON response.
+  - Lambda Function URL: a Function URL attached to the Lambda with `authType` set to `NONE` (public, unauthenticated access).
+  - IAM role reference: the Lambda assumes an existing role referenced with `Role.fromRoleArn(...)`; the project does not create new IAM roles in the stack.
+  - CloudFormation Output: the function URL is exported using `CfnOutput` so the endpoint is printed after deployment.
+- Bootstrap template: an optional `bootstrap-template.yaml` is used to bootstrap the environment when required by the CDK deployment (this project includes a custom template adapted for a lab account).
+
+Simple data flow:
+
+Client (browser/curl)
+  -> Function URL (HTTPS)
+    -> Lambda (executes inline handler)
+      -> returns JSON response
+
 ### Deployment 
 
 To deploy we have in this project to AWS we had to do several steps. First we had to set the correct AWS account id and region on the `HelloCdkApp` class: 
